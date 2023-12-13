@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="">
+    
+</body>
+<script>
+    // <--------------------Images in dom-------------------------------->
+    var a=["chitti.jpg","img1.jpg","Screenshot 2023-11-12 113912.png","6.png"]
+    for(i=0;i<4;i++){
+    let b=document.createElement("img");
+    b.setAttribute("src",a[i]);
+    b.setAttribute("width",100);
+    b.setAttribute("height",100);
+    document.body.appendChild(b);
+    }
+     
+     
+     
+</script>
+</html>
