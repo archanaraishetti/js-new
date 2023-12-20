@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            height: 100%;
+        }
+        div{
+          display: grid;
+          background-color: deeppink;
+          grid-template-columns: auto auto auto auto;
+         padding: 10px;
+          /* width: 100%;
+          height: 100%; */
+          row-gap: 5px;
+          column-gap: 5px;
+        }
+        li{
+            background-color:whitesmoke ;
+            text-align:center;
+            list-style-type: none;
+        }                                                               
+    </style>
+</head>
+<body>
+<script>
+    let a=[
+    {
+        "id": 1,
+        "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "price": 109.95,
+        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        "category": "men's clothing",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy9-jpB_Y1-mJDWgA-_Hi_1T14-2D-sen7EA&usqp=CAU",
+        "rating": {
+            "rate": 3.9,
+            "count": 120
+        }
+    },
+    {
+        "id": 2,
+        "title": "Mens Casual Premium Slim Fit T-Shirts ",
+        "price": 22.3,
+        "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+        "category": "men's clothing",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5TTZJg9mCeX9M8mg6FHp8WMHe8W6zCd4-yA&usqp=CAU",
+        "rating": {
+            "rate": 4.1,
+            "count": 259
+        }
+    },
+    {
+        "id": 3,
+        "title": "Mens Cotton Jacket",
+        "price": 55.99,
+        "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+        "category": "men's clothing",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSukUhLHa2MYKAdP9zGVHB8rPzcxCJaDrvDHw&usqp=CAU",
+        "rating": {
+            "rate": 4.7,
+            "count": 500
+        }
+    }
+    ]
+
+   let DIV=document.createElement("div")
+   document.body.appendChild(DIV)
+  a.map((val,ind,arr)=>{
+let li=document.createElement("li")
+li.innerHTML=a[ind].id
+DIV.appendChild(li)
+
+let li1=document.createElement("li")
+li1.innerHTML=a[ind].title
+DIV.appendChild(li1)
+
+let li2=document.createElement("li");
+       let img=document.createElement("img");
+       img.setAttribute("src",a[ind].image);
+       img.style.width="100px";
+       li2.appendChild(img);
+       DIV.appendChild(li2);
+
+let li3=document.createElement("li");
+let btn=document.createElement("button")
+btn.innerHTML="see more";
+btn.addEventListener("click",function(e){
+    e.preventDefault();
+    localStorage.setItem("seemore",JSON.stringify(val));
+    window.location.assign("seemore.html");
+})
+  
+li3.appendChild(btn);
+DIV.appendChild(li3);
+   })
+</script>
+</body>
+</html>
