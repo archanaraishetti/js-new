@@ -77,31 +77,31 @@
       //   row 
 
        let td=document.createElement("td");
-       td.innerHTML=a[val].id;
+       td.innerHTML=val.id;
        tr.appendChild(td);
       //  data1  
 
     
        let td1=document.createElement("td");
-       td1.innerHTML=a[val].title;
+       td1.innerHTML=val.title;
        tr.appendChild(td1);
        //  data2
 
 
        let td2=document.createElement("td");
-       td2.innerHTML=a[val].description;
+       td2.innerHTML=val.description;
        tr.appendChild(td2);
 
 
        
        let td3=document.createElement("td");
-       td3.innerHTML=a[val].price;
+       td3.innerHTML=val.price;
        tr.appendChild(td3);
 
 
        let td4=document.createElement("td");
        let img=document.createElement("img");
-       img.setAttribute("src",a[val].image);
+       img.setAttribute("src",val.image);
        img.style.width="100px";
        td4.appendChild(img);
        tr.appendChild(td4);
@@ -114,7 +114,7 @@
        btn.addEventListener("click",function(e){
         e.preventDefault();
         localStorage.setItem("seemore",JSON.stringify(val));
-       window.location.assign("./seemore");
+       window.location.assign("./seemore.html");
        })
         td5.appendChild(btn);
         tr.appendChild(td5);
